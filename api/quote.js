@@ -1,6 +1,6 @@
-import quotes from '../quotes.json';
+const quotes = require('../quotes.json');
 
-export default function handler(req, res) {
+module.exports = (req, res) => {
   const random = Math.floor(Math.random() * quotes.length);
   res.status(200).json({ quote: quotes[random] });
-}
+};
